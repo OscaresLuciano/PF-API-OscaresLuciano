@@ -3,11 +3,6 @@ const server = jsonServer.create();
 const router = jsonServer.router("./db.json");
 const middlewares = jsonServer.defaults();
 
-require("dotenv").config();
-
-server.use(function (req, res, next) {
-  setTimeout(next, 1500);
-});
 server.use(middlewares);
 server.use(router);
 
